@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://www.supper.co/security
+url: https://www.supper.co/security
+certifications:
+- SOC 2
+- HIPAA
+- GDPR
+evidence:
+- source: https://www.supper.co/security
+  keywords:
+  - soc 2
+  - soc2
+  - hipaa
+  - gdpr

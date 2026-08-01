@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://api.supper.co/.well-known/oauth-authorization-server
+docs: https://www.supper.co/mcp
+summary:
+  types: [oauth2]
+  oauth2_flows: [authorizationCode]
+  public_client: true          # token_endpoint_auth_methods_supported: none
+  pkce: S256
+  dynamic_client_registration: true
+schemes:
+- name: OAuth2
+  type: oauth2
+  issuer: https://api.supper.co
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.supper.co/mcp/authorize
+    tokenUrl: https://api.supper.co/mcp/token
+    registrationUrl: https://api.supper.co/mcp/register
+    grant_types: [authorization_code, refresh_token]
+    code_challenge_methods: [S256]
+    token_endpoint_auth_methods: [none]
+    scopes: {}                 # scopes_supported not advertised in AS metadata
+  applies_to:
+  - https://api.supper.co/mcp
+notes: >-
+  Authentication profile derived from Supper's published RFC 8414 OAuth 2.0
+  Authorization Server Metadata and the /mcp connection docs. Supper's MCP
+  server is an OAuth 2.0 public client (PKCE S256) supporting Dynamic Client
+  Registration; end users authorize via one-click OAuth in Claude. No API-key
+  or basic-auth surface is documented publicly (developer docs are gated).

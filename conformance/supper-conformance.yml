@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.supper.co/security
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    api.supper.co publishes RFC 8414 OAuth 2.0 Authorization Server Metadata;
+    MCP access is OAuth 2.0 authorization_code with PKCE (S256) and Dynamic
+    Client Registration (RFC 7591).
+- id: mcp
+  conforms: true
+  evidence: >-
+    Hosted MCP (Model Context Protocol) server at https://api.supper.co/mcp
+    exposing ask / get_pipeline_status / get_answer_rows / get_context tools.
+- id: soc2-type-ii
+  conforms: true
+  evidence: 'Security page: "SOC 2 Type II - Annual audit, report on request".'
+- id: gdpr
+  conforms: true
+  evidence: 'Security page: "GDPR - EU data handling & residency controls".'
+- id: hipaa
+  conforms: true
+  evidence: HIPAA referenced in Supper security/compliance content (probe-detected).
+- id: penetration-testing
+  conforms: true
+  evidence: 'Security page: "Regular third-party tests - summary available".'
+- id: openid-connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration published; OAuth 2.0 only.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public OpenAPI; error envelope not documented publicly.
+compliance_program:
+  published: true
+  url: https://www.supper.co/security
+  certifications: [SOC 2 Type II, GDPR, HIPAA]
+  encryption:
+    at_rest: Encryption at rest via AWS KMS (customer-controlled keys)
+    in_transit: Encryption in transit on all connections
+  data_handling: >-
+    Read-only connection to the customer warehouse; no query results persisted
+    in Supper-managed storage by default; full audit trail of queries and field
+    access; field-level obfuscation and role/schema/table/column entitlements.

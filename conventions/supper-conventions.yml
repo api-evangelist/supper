@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.supper.co/mcp
+summary: >-
+  Supper's public programmatic surface is a hosted MCP server rather than a REST
+  API; these are the cross-cutting semantics observable from the published /mcp
+  docs and OAuth metadata. Developer docs (docs.supper.co) are OAuth-gated, so
+  fields not documented publicly are left null rather than fabricated.
+authentication:
+  style: oauth2
+  detail: >-
+    OAuth 2.0 authorization_code + PKCE (S256), public client, Dynamic Client
+    Registration. See authentication/supper-authentication.yml.
+interaction_model:
+  primary: natural-language-query
+  detail: >-
+    Callers submit a plain-English question via the `ask` tool and receive a
+    verified answer grounded in the company's semantic model.
+async_execution:
+  supported: true
+  detail: >-
+    Complex / long-running queries are processed asynchronously; callers poll
+    with `get_pipeline_status` and retrieve results with `get_answer_rows`.
+result_shape:
+  detail: >-
+    `get_answer_rows` returns structured, columnar row data ready to act on;
+    `get_context` returns semantic-model context (metric definitions, entity
+    descriptions, available tables).
+idempotency:
+  supported: null           # not documented publicly - no Idempotency pointer emitted
+pagination:
+  supported: null           # not documented publicly
+versioning:
+  scheme: null
+rate_limiting:
+  documented: null
+error_envelope:
+  detail: >-
+    OAuth-gated endpoints return HTTP 401 with a JSON body
+    {"error":"Missing or invalid Authorization header"} when unauthenticated.
+cross_links:
+  authentication: authentication/supper-authentication.yml
+  mcp: mcp/supper-mcp.yml
+  security: security/supper-trust-center.yml

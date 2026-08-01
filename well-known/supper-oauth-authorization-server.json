@@ -1,0 +1,19 @@
+{
+    "issuer": "https://api.supper.co",
+    "authorization_endpoint": "https://api.supper.co/mcp/authorize",
+    "token_endpoint": "https://api.supper.co/mcp/token",
+    "registration_endpoint": "https://api.supper.co/mcp/register",
+    "response_types_supported": [
+        "code"
+    ],
+    "grant_types_supported": [
+        "authorization_code",
+        "refresh_token"
+    ],
+    "code_challenge_methods_supported": [
+        "S256"
+    ],
+    "token_endpoint_auth_methods_supported": [
+        "none"
+    ]
+}

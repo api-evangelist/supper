@@ -1,9 +1,28 @@
 aid: supper
 name: Supper
-description: Supper is a company surfaced as a portfolio company of union-square-ventures and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Supper is an AI data agent for high-growth companies that connects a company's
+  data, cleans it, and maps its business language so teams can answer critical
+  questions in plain English within minutes. Supper reads from the customer's
+  warehouse (Snowflake, BigQuery, Postgres, Redshift) and SaaS tools (CRM, ERP,
+  marketing, product, payments) over a read-only connection, builds a verified
+  semantic model, and exposes a hosted, OAuth-secured MCP server so any
+  MCP-compatible AI assistant such as Claude can query that data via natural
+  language and return dashboards and answers grounded in that model.
 url: https://raw.githubusercontent.com/api-evangelist/supper/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/6878f348cb0839fd6dc7599d/6892361798f9bef9d3c1a4a1_supper-open-graph%20(1).jpg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,9 +31,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Data
+- Analytics
+- Artificial Intelligence
+- MCP
+- Business Intelligence
+- Semantic Layer
+- Data Agent
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +50,40 @@ maintainers:
 common:
 - type: Website
   url: https://www.supper.co
+- type: Documentation
+  url: https://docs.supper.co
+- type: APIReference
+  url: https://docs.supper.co/api-reference
+- type: Pricing
+  url: https://www.supper.co/pricing-2
+- type: SignUp
+  url: https://app.supper.co
+- type: TermsOfService
+  url: https://www.supper.co/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.supper.co/privacy-policy
+- type: Blog
+  url: https://www.supper.co/resources
+- type: MCPServer
+  url: mcp/supper-mcp.yml
+- type: Authentication
+  url: authentication/supper-authentication.yml
+- type: WellKnown
+  url: well-known/supper-well-known.yml
+- type: Conventions
+  url: conventions/supper-conventions.yml
+- type: Conformance
+  url: conformance/supper-conformance.yml
+- type: Compliance
+  url: https://www.supper.co/security
+- type: TrustCenter
+  url: security/supper-trust-center.yml
+- type: DomainSecurity
+  url: security/supper-domain-security.yml
+- type: LLMsTxt
+  url: llms/supper-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1

@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ on Supper hosts
+hosts:
+- host: https://api.supper.co
+  documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: supper-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource      # RFC 9728
+    status: 404
+  - path: /.well-known/openid-configuration           # OIDC discovery
+    status: 404
+- host: https://www.supper.co
+  documents:
+  - path: /.well-known/security.txt                    # RFC 9116
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog                     # RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  api.supper.co publishes RFC 8414 OAuth 2.0 Authorization Server Metadata used
+  by the Supper MCP server (https://api.supper.co/mcp). No security.txt, OIDC
+  discovery, or api-catalog document is published on the marketing or API host.

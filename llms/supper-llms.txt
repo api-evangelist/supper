@@ -1,0 +1,14 @@
+# Supper.co
+> Supper helps startups get fast, accurate answers from internal data. Think of it as data access via plain English — dashboards and answers in minutes.
+
+## Core Content
+- [Product Page](/product): Overview of Supper’s AI-powered natural language query interface.
+- [Platform](/platform): Supper’s platform is built in layers that mirror how startups need to structure their data.
+- [Use Cases & Case Studies](/case-studies): Real-life examples of how Supper helps leaders streamline board reporting and operational workflows.
+
+## Company & Values
+- [About Us](/company): Meeting leadership, mission, and belief in data-first decision-making.
+
+## Legal & Support
+- [Privacy Policy](/privacy-policy): How we secure your data.
+- [Terms of Use](/terms-of-use): Usage guidelines and permissions.
