@@ -4,45 +4,44 @@ status: published
 source: https://www.supper.co/mcp
 server:
   name: supper
-  description: >-
-    Supper exposes a hosted, remote MCP server so any MCP-compatible AI
-    assistant (Claude, Claude Code, etc.) can query a company's connected data
-    in natural language, grounded in Supper's semantic model.
+  description: Supper exposes a hosted, remote MCP server so any MCP-compatible AI assistant (Claude,
+    Claude Code, etc.) can query a company's connected data in natural language, grounded in Supper's
+    semantic model.
   transport: http
-  url: https://api.supper.co/mcp          # returns HTTP 401 without an OAuth token
+  url: https://api.supper.co/mcp
   auth:
     type: oauth2
-    grant_types: [authorization_code, refresh_token]
+    grant_types:
+    - authorization_code
+    - refresh_token
     pkce: S256
     dynamic_client_registration: true
     authorization_endpoint: https://api.supper.co/mcp/authorize
     token_endpoint: https://api.supper.co/mcp/token
     registration_endpoint: https://api.supper.co/mcp/register
     metadata: https://api.supper.co/.well-known/oauth-authorization-server
-    notes: >-
-      One-click OAuth for Claude connections (no API keys or config files). For
-      backend applications the OAuth access token can be read from the macOS
-      keychain (stored by Claude Code) or passed as an environment variable.
-  setup: >-
-    In Claude: Customize -> Connectors -> find Supper in the connectors list
-    and authorize via OAuth (~two-minute setup).
+    notes: One-click OAuth for Claude connections (no API keys or config files). For backend applications
+      the OAuth access token can be read from the macOS keychain (stored by Claude Code) or passed as
+      an environment variable.
+  setup: 'In Claude: Customize -> Connectors -> find Supper in the connectors list and authorize via OAuth
+    (~two-minute setup).'
 tools:
 - name: ask
-  description: >-
-    Ask any data question in natural language. Returns a verified answer
-    grounded in your semantic model.
+  description: Ask any data question in natural language. Returns a verified answer grounded in your semantic
+    model.
 - name: get_pipeline_status
   description: Check the processing status for complex / long-running queries.
 - name: get_answer_rows
-  description: >-
-    Retrieve structured row data from a completed answer - columnar format,
-    ready to act on.
+  description: Retrieve structured row data from a completed answer - columnar format, ready to act on.
 - name: get_context
-  description: >-
-    Retrieve semantic model context - metric definitions, entity descriptions,
-    available tables.
-notes: >-
-  Tool names and descriptions are quoted from Supper's public /mcp page. The
-  live MCP endpoint (https://api.supper.co/mcp) and its OAuth metadata
-  (RFC 8414) were verified by probe; tool input schemas are not published and
-  are not fabricated here.
+  description: Retrieve semantic model context - metric definitions, entity descriptions, available tables.
+notes: Tool names and descriptions are quoted from Supper's public /mcp page. The live MCP endpoint (https://api.supper.co/mcp)
+  and its OAuth metadata (RFC 8414) were verified by probe; tool input schemas are not published and are
+  not fabricated here.
+deployment:
+  mode: remote
+  endpoint: https://api.supper.co/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
