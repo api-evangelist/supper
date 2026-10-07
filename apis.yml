@@ -59,6 +59,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/supper-plans-pricing.yml
 - url: https://www.supper.co/blog
   type: Blog
 - url: https://www.supper.co/rss.xml
