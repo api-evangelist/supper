@@ -58,3 +58,59 @@ plans:
   unit: tokens
   included_quota: 4 data sources; 100,000 monthly tokens
   overage: Overage / 1k
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  units:
+  - token
+  plans:
+  - name: Tier 0 Try it
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - month
+  - name: Tier 1 Start
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - none
+  - name: Tier 2 Scale
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - none
+  - name: Tier 3 Enterprise
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - none
+  - name: Core (Analyst Services)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - none
+  - name: Strategic (Analyst Services)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - none
