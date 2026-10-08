@@ -1,0 +1,60 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.supper.co/pricing-2
+sources:
+- https://www.supper.co/pricing-2
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Only the free trial tier shows a numeric price ($0); all paid tiers require a call. Pricing described
+  as token-usage based with per-1,000-token overage rates not disclosed.
+plan_count: 6
+currency: USD
+plans:
+- name: Tier 0 Try it
+  price_text: $0 pay only for overages
+  price: 0
+  currency: USD
+  period: month
+  unit: tokens
+  included_quota: 1 connected data source; monthly tokens pay as you go
+  overage: overages billed at the overage rate
+- name: Tier 1 Start
+  price_text: Unlock pricing with a quick call
+  period: none
+  unit: tokens
+  included_quota: 2 data sources connected
+  overage: Overage / 1k
+- name: Tier 2 Scale
+  price_text: Unlock pricing with a quick call
+  period: none
+  unit: tokens
+  included_quota: 4 data sources connected
+  overage: Overage / 1k
+- name: Tier 3 Enterprise
+  price_text: Talk to our Sales team
+  period: none
+  unit: tokens
+  included_quota: Unlimited data sources; monthly tokens tiered by usage
+  overage: Negotiated rate
+- name: Core (Analyst Services)
+  price_text: Unlock pricing with a quick call
+  period: none
+  unit: tokens
+  included_quota: 2 data sources; 100,000 monthly tokens
+  overage: Overage / 1k
+- name: Strategic (Analyst Services)
+  price_text: Unlock pricing with a quick call
+  period: none
+  unit: tokens
+  included_quota: 4 data sources; 100,000 monthly tokens
+  overage: Overage / 1k
